@@ -1,9 +1,13 @@
 <style>
-/* Flower Petals */
+body {
+    background: radial-gradient(circle, #c20000, #000000); /* Change colors as needed */
+    margin: 75;
+    padding: 100;
+}
     .flower {
         width: 100px;
         height: 100px;
-        background-color: pink;
+        background-color: maroon;
         border-radius: 50%;
         position: relative;
         overflow: hidden;
@@ -13,7 +17,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: pink;
+        background-color: green;
         border-radius: 50%;
     }
     .flower:before {
@@ -28,50 +32,163 @@
         width: 20px;
         height: 20px;
         background-color: yellow;
-        border-radius: 50%;
+        border-radius: 100%;
         position: absolute;
         top: 40px;
         left: 40px;
     }
-  
-.eye {
-        width: 100px;
-        height: 100px;
+ :root {
+        --eye-size: 100px;
+        --blink-duration: 0.5s;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+    }
+
+    .eye {
+        width: var(--eye-size);
+        height: var(--eye-size);
         border-radius: 50%;
         background-color: white;
         border: 2px solid black;
         position: relative;
         overflow: hidden;
+        margin: 10px;
+        animation: blink-animation var(--blink-duration) infinite alternate;
     }
+
+    .eye::before {
+        content: '';
+        width: var(--eye-size);
+        height: var(--eye-size);
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        top: calc(50% - var(--eye-size) / 2 + calc(50px * random()));
+        left: calc(50% - var(--eye-size) / 2 + calc(50px * random()));
+        transform: scaleX(-1);
+    }
+
     .pupil {
-        width: 50px;
-        height: 50px;
+        width: calc(var(--eye-size) / 2);
+        height: calc(var(--eye-size) / 2);
         border-radius: 50%;
         background-color: black;
         position: absolute;
-        top: 25px;
-        left: 25px;
+        top: calc(var(--eye-size) / 4);
+        left: calc(var(--eye-size) / 4);
+    }
+
+    @keyframes blink-animation {
+        0%, 100% {
+            height: var(--eye-size);
+        }
+        50% {
+            height: 0;
+        }
+    }
+.face {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: yellow;
+        position: relative;
+        overflow: hidden;
+    }
+    .eye-left, .eye-right {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        top: 30%;
+    }
+    .eye-left {
+        left: 30%;
+    }
+    .eye-right {
+        right: 30%;
+    }
+    .mouth {
+        width: 100px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid black;
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .mouth::before {
+        content: '';
+        width: 120px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid black;
+        position: absolute;
+        top: -5px;
+        left: -10px;
     }
 </style>
 <body>
+    <div class="container">
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+        <!-- Add more eyes by duplicating the eye div -->
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+        <!-- Add as many eyes as needed -->
+    </div>
   <div class="flower">
       <div class="center"></div>
   </div>
-  <div class="eye">
-        <div class="pupil"></div>
+<div class="face">
+        <div class="eye-left"></div>
+        <div class="eye-right"></div>
+        <div class="mouth"></div>
     </div>
-
-  <canvas id="myCanvas" width="200" height="200"></canvas>
 </body>
 <div>
-  <h1>hi, welcome to my site</h1>
+<p>hello. <span style="font-size: 26px">hello!</span>  <i>hello!</i>.</p>
+  <h1>always</h1>
     <i>enjoy your stay ^-^ </i>
   <p>
-    Have never used this website before, very cool! I like the theme and <a href="https://netizen.org" target="_blank"> style </a>.
+    <b>
+    <a href="https://howthey.watch/" target="_blank"> WATCHING :</a>
+    </b>
   </p>
   <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt=":3"
        width="200"
        height="200">
+  <p>hello. <span style="font-size: 26px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 21px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 16px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 11px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 8px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 7px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 6px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 5px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 4px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 3px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 2px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 1px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: .01px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 2px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 2px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 2px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 2px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 2px">hello!</span>  <i>hello!</i>.</p>
+  <p>hello. <span style="font-size: 2px">hello!</span>  <i>hello!</i>.</p>
 </div>
 
 <script>
