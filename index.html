@@ -21,11 +21,27 @@
 
 <script>
   function createDot() {
-    var length = random(10, $(".game-screen").width() - 100
-    var velocity = 100
-    var sice = random(10,33);
-    var pxSpeed = 575 / velocity *100)
+    const length = random(10, $(".game-screen").width() - 100)
+    const velocity = 100;
+    const size = random(10,33);
+    const pxSpeed = (575 / velocity *1000);
+    const dot = $("<div/>", {
+      class: "dot",
+      style: "width" + size + "px; height:" + size + "px; left:" + length + "px; animation-duration:" + pxSpeed + "ms;"
+    });
+    console.log(velocity);
+    
+    $(".game-screen").append(dot);
+    dot.one(
+      "webkitAnimationEnd oAnimationEnd msAnimationEnd animationend",
+      function(event){
+        $(this).remove();
+        
+      }
+        
+    );
     
   }
 </script>
+
 
